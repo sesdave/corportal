@@ -4,6 +4,8 @@ services:
     build: 
       context: .
     image: davidses/corren-app
+    depends_on:
+      - db
     networks:
       - frontend
       - backend
@@ -29,6 +31,6 @@ services:
     ports:
       - '5432:5432'
     container_name: corren-postgress-app
-
+networks:
   frontend:
   backend:
